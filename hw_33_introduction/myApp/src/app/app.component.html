@@ -1,0 +1,51 @@
+<div class="welcome">
+  <h2>
+    Welcome to {{ title }}!
+  </h2>
+</div>
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6 jumbotron mt-2">
+      <div class="input-group">
+        <input type="number" 
+               class="form-control" 
+               id="input_1"
+               [value]="operand_1" 
+               (input)="onInputOperand_1($event)"
+               placeholder="{{ validationMsg }}">
+
+
+        <select class="custom-select" 
+                [value]="operator" 
+                (input)="onSelectedOperator($event)">
+          <option>+</option>
+          <option>-</option>
+          <option>*</option>
+          <option>/</option>
+        </select>
+
+        <input type="number" 
+               class="form-control" 
+               [value]="operand_2" 
+               (input)="onInputOperand_2($event)"
+               placeholder="{{ validationMsg }}">
+
+        <div class="input-group-append">
+          <button class="btn btn-primary" 
+                  type="button" 
+                  (click)="onCalculate()"
+                  >Calculate</button>
+        </div>
+      </div>
+      <hr>
+      <p class="text-danger">{{ mainValidationMsg }}</p>
+      <p class="result" 
+         [hidden]="!showResult">
+         Result: {{ operand_1 }} {{ operator }} {{ operand_2 }} = {{ res }}
+      </p>
+    </div>
+  </div>
+</div>
+
+
