@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="display-4 text-center mt-3">Welcome to {{ title }}</h1>
+  
+  <app-add-item 
+    (itemAdded)="onItemAdded($event)">
+  </app-add-item>
+
+  <app-items-list 
+    [itemsList]="itemsArr"
+    (changeStatus)="onChangeStatus($event)"
+    (removeItem)="onRemoveItem($event)">
+  </app-items-list>
+</div>
