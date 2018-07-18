@@ -11,3 +11,12 @@
     font-weight: 500;
     margin-right: 5px;
 }
+
+.completed {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.completed span {
+    color: white;
+}

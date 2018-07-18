@@ -9,21 +9,14 @@ export class AddItemComponent implements OnInit {
 
   @Output() itemAdded = new EventEmitter<string>();
   itemName: string = '';
-  allowCreateItem: boolean = false;
-    
+      
   constructor() { }
 
   ngOnInit() {
   }
 
-  onEnterItemName(e) {
-    this.itemName = e.target.value;
-    this.itemName !== '' ? this.allowCreateItem = true : this.allowCreateItem = false;
-  }
-
   onCreateItem() {
     this.itemAdded.emit(this.itemName);
     this.itemName = '';
-    this.allowCreateItem = false;
   }
 }

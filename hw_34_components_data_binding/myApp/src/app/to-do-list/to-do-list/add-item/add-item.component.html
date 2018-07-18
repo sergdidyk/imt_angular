@@ -11,15 +11,14 @@
             class="form-control" 
             aria-label="ItemName" 
             aria-describedby="basic-addon1"
-            [value]="itemName"
-            (input)="onEnterItemName($event)">
+            [(ngModel)]="itemName">
         </div>
       </div>
       <div class="col-md-4 d-flex justify-content-end">
         <button 
           class="btn btn-primary"
-          [disabled]="!allowCreateItem"
-          (click)="onCreateItem()"
+         (click)="onCreateItem()"
+         [disabled]="!itemName"
           >Create To-Do item</button>
       </div>
     </div>

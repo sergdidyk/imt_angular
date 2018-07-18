@@ -6,10 +6,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./items-list.component.css']
 })
 export class ItemsListComponent implements OnInit {
-
-  @Input() itemsList: {}[];
+  @Input() itemsList: {toDoItemName: string, toDoItemStatus:string}[];
   @Output() changeStatus = new EventEmitter<number>();
   @Output() removeItem = new EventEmitter<number>();
+    
     
   constructor() { }
 
@@ -17,8 +17,13 @@ export class ItemsListComponent implements OnInit {
     
   }
 
+  itemCompleted(item: {toDoItemName: string, toDoItemStatus:string}) {
+    return item.toDoItemStatus === 'Completed!' ? true : false;
+  }
+
   onItemClicked(index) {
     this.changeStatus.emit(index);
+    this.itemCompleted(this.itemsList[index]); 
   }
 
   onCloseClicked(index) {
