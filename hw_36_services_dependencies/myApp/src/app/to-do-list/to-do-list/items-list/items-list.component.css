@@ -1,0 +1,27 @@
+.list-group-item {
+    cursor: pointer;
+}
+
+.badge {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.item_number {
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.completed {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.completed span {
+    color: white;
+}
+
+.control {
+    float: right;
+}
+

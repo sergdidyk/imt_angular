@@ -1,0 +1,54 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-10 mb-2 mt-2">
+
+    <div class="row" *ngIf="show; else updateItemBlock">
+      <div class="col-md-8 d-flex justify-content-start">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Enter your To-Do item here:</span>
+          </div>
+          <input 
+            type="text" 
+            class="form-control" 
+            aria-label="ItemName" 
+            aria-describedby="basic-addon1"
+            [(ngModel)]="itemName">
+        </div>
+      </div>
+      <div class="col-md-4 d-flex justify-content-end">
+        <button 
+          class="btn btn-primary"
+         (click)="onCreateItem()"
+         [disabled]="!itemName"
+          >Create To-Do item</button>
+      </div>
+    </div>
+
+    <ng-template #updateItemBlock>
+        <div class="row">
+          <div class="col-md-8 d-flex justify-content-start">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Your updated To-Do item name:</span>
+              </div>
+              <input 
+                type="text" 
+                class="form-control" 
+                aria-label="ItemName" 
+                aria-describedby="basic-addon1"
+                [(ngModel)]="itemName">
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <button 
+              class="btn btn-primary"
+              (click)="onUpdateItem()"
+              [disabled]="!itemName"
+              >Update To-Do item</button>
+          </div>
+        </div>
+    </ng-template>
+
+    <hr>
+  </div>
+</div>
