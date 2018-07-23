@@ -10,15 +10,14 @@ import { ToDo } from '../models/ToDo';
 export class ItemsListComponent implements OnInit {
   itemsList: ToDo[];
        
-  constructor(private toDoService: ToDoService) { 
+  constructor(private toDoService: ToDoService) {}
+
+  ngOnInit() {
     this.toDoService.updateItemList.subscribe(
       (items: ToDo[]) => {
         this.itemsList = items;
       }
-    )
-  }
-
-  ngOnInit() {
+    );
     this.itemsList = this.toDoService.items;
   }
 

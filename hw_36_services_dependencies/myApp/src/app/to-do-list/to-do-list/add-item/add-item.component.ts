@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToDoService } from '../to-do.service';
 
 @Component({
@@ -6,19 +6,21 @@ import { ToDoService } from '../to-do.service';
   templateUrl: './add-item.component.html',
   styleUrls: ['./add-item.component.css']
 })
-export class AddItemComponent {
+export class AddItemComponent implements OnInit{
   itemName: string = '';
   show: boolean = true;
   itemIdforUpdate: number;
       
-  constructor(private toDoService: ToDoService) {
+  constructor(private toDoService: ToDoService) {}
+
+  ngOnInit() {
     this.toDoService.itemToEdit.subscribe(
       (item: {index, name}) => {
         this.show = false;
         this.itemIdforUpdate = item.index;
         this.itemName = item.name;
       }
-    )
+    );
   }
 
   onCreateItem() {
