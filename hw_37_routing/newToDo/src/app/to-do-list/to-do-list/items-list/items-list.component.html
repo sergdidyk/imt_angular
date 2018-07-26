@@ -1,0 +1,54 @@
+<div class="row d-flex justify-content-center mt-3">
+  <div class="col-12">
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-action"
+            *ngFor="let item of itemsList; let i = index"
+            [ngClass]="{'completed': itemCompleted(item)}">
+            
+            <span class="item_id">{{ i + 1 }}.</span>
+  
+            <span class="item_name">{{ item.toDoItemName }}</span>
+            
+            <span class="badge badge-info">{{ item.toDoItemStatus }}</span>
+  
+            <div class="d-inline-flex control">
+              <button 
+                type="button" 
+                class="btn btn-success btn-sm"
+                (click)="onChangeStatus(i)">
+                Change Status
+              </button>
+
+              <button 
+                type="button" 
+                class="btn btn-info btn-sm ml-2"
+                (click)="onViewInfo(i)">
+                View Info
+              </button>
+
+              <button 
+                type="button" 
+                class="btn btn-primary btn-sm ml-2"
+                (click)="onEdit(i)">
+                Edit
+              </button>
+  
+              <button 
+                type="button" 
+                class="btn btn-danger btn-sm ml-2" 
+                (click)="onDelete(i)">
+                Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+        
+        <button 
+          type="button" 
+          class="btn btn-primary btn-sm mt-3 add_btn"
+          (click)="onAdd()">
+          ADD YOUR TO-DO!
+        </button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row mt-3">
+  <div class="col-8">
+
+    <div class="jumbotron">
+      <div *ngIf="!showInfo; else infoBlock">
+        <h5>Please, select To-Do Item in To-Do list and click "View Info".</h5>
+      </div>
+
+      <ng-template #infoBlock>
+          <div>
+            <h3>To-Do Info:</h3>
+            <p><strong>ID: </strong><span>{{ idToShow }};</span></p>
+            <p><strong>Description: </strong><span>{{ name }};</span></p>
+            <p><strong>Status: </strong><span>{{ status }}.</span></p>
+          </div>
+      </ng-template>
+
+      <button 
+        class="btn btn-primary mt-2"
+        (click)="onGoBack()">View To-Do List
+      </button>
+    </div>
+
+  </div>
+</div>
+
