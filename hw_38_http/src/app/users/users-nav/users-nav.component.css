@@ -1,0 +1,22 @@
+ul {
+    width: 100%;
+    display: block;
+    height: 25px;
+    list-style-type: none;
+    background-color: #7fffd4;
+}
+
+li {
+    float: left;
+    min-width: 50px;
+    padding: 2px 10px;
+    border: 1px solid #6eeec3;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.active {
+    background-color: yellow;
+}

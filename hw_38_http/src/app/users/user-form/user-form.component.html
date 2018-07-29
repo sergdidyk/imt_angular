@@ -1,0 +1,13 @@
+<form (submit)="onFormSubmit()">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" [(ngModel)]="user.name"><br />
+  
+    <label for="surname">Surname</label>
+    <input type="text" name="surname" id="surname" [(ngModel)]="user.surname"><br />
+    
+    <label for="age">Age</label>
+    <input type="number" name="age" id="age" [(ngModel)]="user.age"><br />
+
+    <input type="submit" value="Save" />
+    <input type="button" value="Cancel" (click) = "onCancelBtnClick()"/>
+</form>

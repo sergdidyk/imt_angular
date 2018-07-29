@@ -1,0 +1,6 @@
+<h2>Edit User</h2>
+<button routerLink="../35"></button>
+<app-user-form 
+  [user]="user$ | async"
+  (save)="onFormSave($event)"
+  (cancel)="onFormCancel()"></app-user-form>

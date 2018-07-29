@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Age</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of list$ | async" [routerLink]="[user.id]">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.surname}}</td>
+      <td>{{user.age}}</td>
+      <td><a (click)="onDelete($event, user.id)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>

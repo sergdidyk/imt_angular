@@ -1,0 +1,15 @@
+<app-operand 
+  [title]="'A'" 
+  [(value)]="operandA"
+  ></app-operand>
+
+<select name="operator" [(ngModel)] = "operator">
+  <option value="{{op}}" *ngFor="let op of operators">{{op}}</option>
+</select>
+
+<app-operand 
+  [title]="'B'" 
+  [(value)]="operandB"
+  ></app-operand>
+<button (click)="onCalculateBtnClick()">Calculate</button>
+<div>Result: {{result | formatResult:operandA:operandB:operator}}</div>

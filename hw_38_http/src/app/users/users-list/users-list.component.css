@@ -1,0 +1,14 @@
+table{
+    width: 100%
+}
+th{
+    text-align: left;
+}
+th, td {
+    padding:2px 10px;
+}
+
+tbody > tr:hover{
+    background-color: gray;
+    cursor: pointer;
+}
